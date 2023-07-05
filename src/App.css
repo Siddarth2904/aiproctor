@@ -40,11 +40,9 @@ button:hover {
 	background: -o-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
 
 	/* ie 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(
-			startColorstr='#F3FAFF',
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3FAFF',
 			endColorstr='#F8FCFF',
-			GradientType=0
-		);
+			GradientType=0);
 
 	/* ie 10+ */
 	background: -ms-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
@@ -58,4 +56,44 @@ button:hover {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+	.section-type {
+		margin: 1.5rem 4rem;
+	}
+
+	.title-heading {
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.section-type {
+		margin: 1rem 2rem;
+	}
+
+	.title-heading {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.section-type {
+		margin: 0.5rem 1rem;
+	}
+
+	.title-heading {
+		font-size: 0.75rem;
+	}
+}
+
+@media (max-width: 240px) {
+	.section-type {
+		margin: 0.25rem 0.5rem;
+	}
+
+	.title-heading {
+		font-size: 0.5rem;
+	}
 }
