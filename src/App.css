@@ -30,24 +30,19 @@ button:hover {
 }
 
 .gradient-bg {
-	/* ff 3.6+ */
+
 	background: -moz-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
 
-	/* safari 5.1+,chrome 10+ */
 	background: -webkit-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
 
-	/* opera 11.10+ */
 	background: -o-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
 
-	/* ie 6-9 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3FAFF',
 			endColorstr='#F8FCFF',
 			GradientType=0);
 
-	/* ie 10+ */
 	background: -ms-linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
-
-	/* global 94%+ browsers support */
+	
 	background: linear-gradient(90deg, #f8fcff 0%, #f3faff 100%);
 }
 

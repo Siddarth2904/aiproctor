@@ -44,3 +44,43 @@
 .admin-dashboard .copy-link button:hover {
 	background-color: #5b82ed;
 }
+
+@media (max-width: 768px) {
+	.section-type {
+		margin: 1.5rem 4rem;
+	}
+
+	.title-heading {
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.section-type {
+		margin: 1rem 2rem;
+	}
+
+	.title-heading {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.section-type {
+		margin: 0.5rem 1rem;
+	}
+
+	.title-heading {
+		font-size: 0.75rem;
+	}
+}
+
+@media (max-width: 240px) {
+	.section-type {
+		margin: 0.25rem 0.5rem;
+	}
+
+	.title-heading {
+		font-size: 0.5rem;
+	}
+}
