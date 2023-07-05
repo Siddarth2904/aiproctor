@@ -1,0 +1,61 @@
+.client-create {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+	margin: 1.5rem;
+}
+
+.client-create .create-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+}
+
+.client-create .input-fields {
+	max-width: 40vw;
+	min-width: 30vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5em;
+}
+
+.client-create .input-fields input {
+	padding: 0.8rem 1.6rem;
+	font-size: 1.1rem;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
+}
+
+.client-create .input-fields input:focus {
+	outline: none;
+	border-color: #4d72da;
+	box-shadow: 0 0 0 2px rgba(77, 114, 218, 0.2);
+}
+
+.client-create .input-fields input::placeholder {
+	color: #878899;
+}
+
+.client-create .input-fields input[type="submit"] {
+	color: #fff;
+	background-color: #4d72da;
+	font-weight: 600;
+	font-size: 1rem;
+	border: none;
+	padding: 0.8rem 1.6rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.client-create .input-fields input[type="submit"]:hover {
+	background-color: #405fb3;
+}
+
+.client-create .input-fields input[type="submit"]:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(77, 114, 218, 0.2);
+}

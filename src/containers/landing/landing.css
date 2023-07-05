@@ -1,0 +1,26 @@
+.landing-cta {
+    margin: 7rem 0 8rem 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 6rem 1rem;
+    font-family: var(--font-family);
+}
+
+.landing-cta .input-item {
+    max-width: 20rem;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid #999999;
+    border-radius: 15px;
+
+}
+
+.landing-cta .desc {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 1.2rem;
+}

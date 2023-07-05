@@ -1,0 +1,82 @@
+.user-register {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	margin: 2rem;
+}
+
+.user-register .register-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.register-form .input-fields {
+	max-width: 25rem;
+	min-width: 20rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.input-fields input {
+	padding: 0.8rem 1.6rem;
+	font-size: 1rem;
+	border: 1px solid #999999;
+	border-radius: 4px;
+}
+
+.input-fields input:focus {
+	outline: none;
+	border-color: #5c5c5c;
+	box-shadow: 0 0 5px rgba(92, 92, 92, 0.5);
+}
+
+.image-capture {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.image-capture button {
+	color: #ff6b6b;
+	background-color: #ffffff;
+	font-family: 'Arial', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+	border: none;
+	padding: 0.8rem 1.6rem;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+.image-capture .captured {
+	margin: 4rem 0;
+}
+
+.image-capture .proceed {
+	margin: 5rem 0 0;
+}
+
+.image-capture img {
+	height: 200px;
+	position: absolute;
+}
+
+.image-capture .captured {
+	height: 250px;
+	position: absolute;
+}
+
+.image-capture img {
+	height: 200px;
+	position: absolute;
+}

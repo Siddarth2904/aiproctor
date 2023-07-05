@@ -1,0 +1,65 @@
+.status-dashboard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5em;
+	margin: 2rem 2rem 6rem;
+}
+
+.status-dashboard .charts {
+	width: 50vw;
+}
+
+.status-dashboard .charts .two-charts {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.status-dashboard .test-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+	padding: 2rem;
+}
+
+.test-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.test-details .test-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+}
+
+.copy-link button {
+	color: #1c4b74;
+	background-color: #f3faff;
+	font-weight: 600;
+	font-size: 1rem;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 0.9rem;
+	max-width: 12rem;
+}
+
+.status-dashboard .terminated-students {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	gap: 2rem;
+}
+
+.status-dashboard .terminated-students .terminated-boxes {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+}

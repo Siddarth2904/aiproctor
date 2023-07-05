@@ -1,0 +1,33 @@
+.landing-navbar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 1rem 2rem;
+	font-family: 'Inter', sans-serif;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 12;
+	background-color: #ffffff;
+	backdrop-filter: blur(8px);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #00000016;
+}
+
+.landing-navbar .landing-navbar-links {
+	display: flex;
+	gap: 2rem;
+	font-weight: 600;
+	font-size: 1rem;
+	margin-right: 4rem;
+}
+
+.landing-navbar .landing-navbar-links a {
+	color: #1c4b74;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.landing-navbar .landing-navbar-links a:hover {
+	color: #5880f0;
+}
