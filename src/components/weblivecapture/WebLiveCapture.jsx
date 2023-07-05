@@ -11,7 +11,7 @@ const WebLiveCapture = () => {
 	const webcamRef = React.useRef(null);
 	const capture = React.useCallback(
 		() => {
-			const imageSrc = webcamRef.current.getScreenshot();
+			webcamRef.current.getScreenshot();
 			// console.log('Captured');
 		},
 		[webcamRef]
