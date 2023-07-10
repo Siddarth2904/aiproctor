@@ -44,6 +44,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
+	position: relative;
+	/* Add this line to make the container relative */
 }
 
 .image-capture button {
@@ -58,25 +60,26 @@
 	box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
 }
 
+
 .image-capture .captured {
-	margin: 4rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	position: relative;
 }
 
 .image-capture .proceed {
-	margin: 5rem 0 0;
+	margin: 1rem 0 0;
 }
+
 
 .image-capture img {
-	height: 200px;
-	position: absolute;
-}
-
-.image-capture .captured {
-	height: 250px;
-	position: absolute;
-}
-
-.image-capture img {
-	height: 200px;
-	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	position: relative;
 }

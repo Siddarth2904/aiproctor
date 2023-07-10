@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { CommonInput, CtaButton } from '../../components';
 import './login.css';
 
-const inputField = ['Email ID', 'Password'];
-
 const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -18,9 +16,28 @@ const Login = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('Login form submitted');
-		console.log('Email:', email);
-		console.log('Password:', password);
+		if (email && password) {
+			fetch('/api/signin', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email,
+					password,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					// You can perform any necessary actions with the received data here
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+		} else {
+			console.log('Please fill in all the required fields.');
+		}
 	};
 
 	return (
@@ -29,18 +46,21 @@ const Login = () => {
 				<h1 className="title-heading">User Login</h1>
 				<form onSubmit={handleSubmit}>
 					<div className="input-fields">
-						{inputField.map((item, index) => (
-							<CommonInput
-								key={index}
-								placeholderText={item}
-								value={item === 'Email ID' ? email : password}
-								onChange={item === 'Email ID' ? handleEmailChange : handlePasswordChange}
-							/>
-						))}
+						<CommonInput
+							placeholderText="Email ID"
+							value={email}
+							onChange={handleEmailChange}
+						/>
+						<CommonInput
+							placeholderText="Password"
+							type="password"
+							value={password}
+							onChange={handlePasswordChange}
+						/>
 					</div>
-					<a href="/" className='input-fields'>
+					<button type="submit">
 						<CtaButton text="Login" />
-					</a>
+					</button>
 				</form>
 			</div>
 		</div>
