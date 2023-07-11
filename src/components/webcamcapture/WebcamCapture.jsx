@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
+import { Link } from 'react-router-dom';
 
 const videoConstraints = {
 	width: 1280,
@@ -9,13 +10,13 @@ const videoConstraints = {
 
 const WebcamCapture = () => {
 	const webcamRef = React.useRef(null);
-	const [ image, setImage ] = useState('');
+	const [image, setImage] = useState('');
 	const capture = React.useCallback(
 		() => {
 			const imageSrc = webcamRef.current.getScreenshot();
 			setImage(imageSrc);
 		},
-		[ webcamRef ]
+		[webcamRef]
 	);
 
 	return (
@@ -34,11 +35,13 @@ const WebcamCapture = () => {
 			)}
 
 			{image === '' ? (
-				<button  onClick={capture}>Capture photo</button>
+				<button onClick={capture}>Capture photo</button>
 			) : (
-				<button className="proceed" href="/login">
-					Proceed
+
+				<button className="proceed">
+					<Link to="/login">Proceed</Link>
 				</button>
+
 			)}
 		</React.Fragment>
 	);

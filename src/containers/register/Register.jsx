@@ -23,7 +23,6 @@ const Register = () => {
         .then(response => response.json())
         .then(data => {
           console.log(data);
-          // You can perform any necessary actions with the received data here
         })
         .catch(error => {
           console.error(error);
@@ -58,9 +57,7 @@ const Register = () => {
         <div className="image-capture">
           <WebcamCapture />
         </div>
-        <button onClick={handleRegister}>
-          <CtaButton text="Register" />
-        </button>
+        <CtaButton onClick={handleRegister} text="Register" />
       </div>
     </div>
   );

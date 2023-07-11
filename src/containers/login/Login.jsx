@@ -57,10 +57,9 @@ const Login = () => {
 							value={password}
 							onChange={handlePasswordChange}
 						/>
+					<CtaButton onClick={handleSubmit} text="Login" />
 					</div>
-					<button type="submit">
-						<CtaButton text="Login" />
-					</button>
+
 				</form>
 			</div>
 		</div>
