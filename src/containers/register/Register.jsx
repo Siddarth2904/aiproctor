@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CommonInput, CtaButton, WebcamCapture } from '../../components';
+import React, { useState } from "react";
+import { CommonInput, CtaButton } from '../../components';
 import './register.css';
 
 const Register = () => {
@@ -7,28 +7,31 @@ const Register = () => {
   const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = () => {
-    if (email && fullName && password) {
-      fetch('/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          fullName,
-          password,
-        }),
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
+  const senddata = async (e) => {
+    e.preventDefault();
+    const formData = {
+      email,
+      fullName,
+      password,
+    };
+    console.log(JSON.stringify(formData));
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.status === 422 || !data) {
+      console.warn('Invalid Details!');
     } else {
-      console.log('Please fill in all the required fields.');
+      console.log(data);
+      setEmail('');
+      setFullName('');
+      setPassword('');
     }
   };
 
@@ -39,25 +42,28 @@ const Register = () => {
         <div className="input-fields">
           <CommonInput
             placeholderText="Email ID"
+            type={"text"}
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <CommonInput
             placeholderText="Full Name"
+            type={"text"}
             value={fullName}
-            onChange={e => setFullName(e.target.value)}
+            onChange={(e) => setFullName(e.target.value)}
           />
           <CommonInput
             placeholderText="Password"
-            type="password"
+            type={"password"}
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
+          <button onClick={senddata}>Register</button>
+          {/* <CtaButton onClick={senddata} text="Register" /> */}
         </div>
-        <div className="image-capture">
+        {/* <div className="image-capture">
           <WebcamCapture />
-        </div>
-        <CtaButton onClick={handleRegister} text="Register" />
+        </div> */}
       </div>
     </div>
   );
