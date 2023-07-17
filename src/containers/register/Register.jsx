@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CommonInput, CtaButton } from '../../components';
+import { CommonInput } from '../../components';
 import './register.css';
 
 const Register = () => {
@@ -59,7 +59,6 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={senddata}>Register</button>
-          {/* <CtaButton onClick={senddata} text="Register" /> */}
         </div>
         {/* <div className="image-capture">
           <WebcamCapture />

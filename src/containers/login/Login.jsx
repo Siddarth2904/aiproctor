@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CommonInput, CtaButton } from '../../components';
+import { CommonInput } from '../../components';
 import './login.css';
 
 const Login = () => {
@@ -57,7 +57,7 @@ const Login = () => {
 							value={password}
 							onChange={handlePasswordChange}
 						/>
-					<CtaButton onClick={handleSubmit} text="Login" />
+						<button onClick={handleSubmit}>Login</button>
 					</div>
 
 				</form>

@@ -38,6 +38,19 @@
 	box-shadow: 0 0 5px rgba(92, 92, 92, 0.5);
 }
 
+.input-fields button {
+	background-color: #5880f0;
+	color: #ffffff;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+	border: none;
+	padding: 1.2rem 2.75rem;
+	border-radius: 0.9rem;
+	box-shadow: 10px 9px 40px 7px rgba(177, 202, 255, 0.21);
+	transition: background-color 0.3s ease;
+}
+
 .image-capture {
 	display: flex;
 	flex-direction: column;
@@ -45,7 +58,6 @@
 	justify-content: center;
 	gap: 1.5rem;
 	position: relative;
-	/* Add this line to make the container relative */
 }
 
 .image-capture button {
@@ -73,7 +85,6 @@
 .image-capture .proceed {
 	margin: 1rem 0 0;
 }
-
 
 .image-capture img {
 	display: flex;

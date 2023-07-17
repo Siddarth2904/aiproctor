@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonInput, CtaButton } from '../../components';
+import { CommonInput } from '../../components';
 import './create.css';
 
 const inputField = [
@@ -23,9 +23,8 @@ const Create = () => {
 					))}
 				</div>
 				<a href='/dashboard'>
-					<CtaButton text="Create" />
+					<button>Create</button>
 				</a>
-				
 			</div>
 		</div>
 	);
