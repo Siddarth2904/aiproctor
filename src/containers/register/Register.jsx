@@ -1,68 +1,85 @@
 import React, { useState } from "react";
-import { CommonInput } from '../../components';
+// import { CommonInput } from '../../components';
 import './register.css';
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [password, setPassword] = useState('');
-
+  const [udata, setUdata] = useState({
+    email: "",
+    fullName: "",
+    password: "",
+  });
+  const adddata = (e) => {
+    const { name, value } = e.target;
+    // console.log(e.target);
+    setUdata(() => {
+      return {
+        ...udata,
+        [name]: value,
+      };
+    });
+  };
   const senddata = async (e) => {
     e.preventDefault();
-    const formData = {
-      email,
-      fullName,
-      password,
-    };
-    console.log(JSON.stringify(formData));
-    const res = await fetch('/api/register', {
+    const { email, fullName, password } = udata
+
+    const res = await fetch('/register', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        email,
+        fullName,
+        password
+      })
     });
 
-    const data = await res.json();
+
+    const data = await res.json()
+    // console.log(data);
 
     if (res.status === 422 || !data) {
-      console.warn('Invalid Details!');
     } else {
-      console.log(data);
-      setEmail('');
-      setFullName('');
-      setPassword('');
+      setUdata({ ...udata, email: '', fullName: '', password: '' })
     }
-  };
+  }
 
   return (
     <div className="user-register">
       <div className="register-form">
         <h1 className="title-heading">Register</h1>
-        <div className="input-fields">
-          <CommonInput
-            placeholderText="Email ID"
-            type={"text"}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <CommonInput
-            placeholderText="Full Name"
-            type={"text"}
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          <CommonInput
-            placeholderText="Password"
-            type={"password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={senddata}>Register</button>
-        </div>
-        {/* <div className="image-capture">
+        <form method="POST">
+          <div className="input-fields">
+            <input
+              type="text"
+              onChange={adddata}
+              value={udata.email}
+              placeholder="Email"
+              name="email"
+              id="email"
+            />
+            <input
+              type="text"
+              onChange={adddata}
+              value={udata.fullName}
+              placeholder="Full Name"
+              name="fullName"
+              id="fullName"
+            />
+            <input
+              type="password"
+              onChange={adddata}
+              value={udata.password}
+              name="password"
+              placeholder="Password"
+              id="password"
+            />
+            <button onClick={senddata}>Register</button>
+          </div>
+          {/* <div className="image-capture">
           <WebcamCapture />
         </div> */}
+        </form>
       </div>
     </div>
   );
