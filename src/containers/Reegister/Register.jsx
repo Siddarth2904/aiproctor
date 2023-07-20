@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { CommonInput } from '../../components';
 import './register.css';
 
 const Register = () => {
@@ -8,19 +7,19 @@ const Register = () => {
     fullName: "",
     password: "",
   });
-  const adddata = (e) => {
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(e.target);
-    setUdata(() => {
-      return {
-        ...udata,
-        [name]: value,
-      };
-    });
+    setUdata((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
-  const senddata = async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, fullName, password } = udata
+
+    const { email, fullName, password } = udata;
 
     const res = await fetch('/register', {
       method: 'POST',
@@ -34,13 +33,12 @@ const Register = () => {
       })
     });
 
-
-    const data = await res.json()
-    // console.log(data);
+    const data = await res.text();
+    console.log(data);
 
     if (res.status === 422 || !data) {
     } else {
-      setUdata({ ...udata, email: '', fullName: '', password: '' })
+      setUdata({ email: '', fullName: '', password: '' });
     }
   }
 
@@ -48,11 +46,11 @@ const Register = () => {
     <div className="user-register">
       <div className="register-form">
         <h1 className="title-heading">Register</h1>
-        <form method="POST">
+        <form onSubmit={handleSubmit}>
           <div className="input-fields">
             <input
               type="text"
-              onChange={adddata}
+              onChange={handleChange}
               value={udata.email}
               placeholder="Email"
               name="email"
@@ -60,7 +58,7 @@ const Register = () => {
             />
             <input
               type="text"
-              onChange={adddata}
+              onChange={handleChange}
               value={udata.fullName}
               placeholder="Full Name"
               name="fullName"
@@ -68,13 +66,13 @@ const Register = () => {
             />
             <input
               type="password"
-              onChange={adddata}
+              onChange={handleChange}
               value={udata.password}
               name="password"
               placeholder="Password"
               id="password"
             />
-            <button onClick={senddata}>Register</button>
+            <button type="submit">Register</button>
           </div>
           {/* <div className="image-capture">
           <WebcamCapture />
@@ -86,3 +84,4 @@ const Register = () => {
 };
 
 export default Register;
+
