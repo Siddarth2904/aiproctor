@@ -25,11 +25,18 @@
 	gap: 1rem;
 }
 
-.input-fields input {
-	padding: 0.8rem 1.6rem;
+.input-fields input,
+select {
+	padding: 1rem 1.6rem;
 	font-size: 1rem;
+	position: relative;
 	border: 1px solid #999999;
 	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	/* Make sure the input fields take up the full width */
 }
 
 .input-fields input:focus {
@@ -38,26 +45,35 @@
 	box-shadow: 0 0 5px rgba(92, 92, 92, 0.5);
 }
 
-.input-fields button {
+.button {
+	display: flex;
+	justify-content: center;
+  }
+  
+  button {
 	background-color: #5880f0;
 	color: #ffffff;
 	font-family: 'Inter', sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
 	border: none;
+	margin-top: 1rem;
 	padding: 1.2rem 2.75rem;
 	border-radius: 0.9rem;
 	box-shadow: 10px 9px 40px 7px rgba(177, 202, 255, 0.21);
 	transition: background-color 0.3s ease;
-}
+  }
+  
 
 .image-capture {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1.5rem;
+	/* gap: 1.5rem; */
 	position: relative;
+	transform: scale(0.9);
+	/* Adjust the scale value to decrease the size (e.g., 0.8, 0.5, etc.) */
 }
 
 .image-capture button {
@@ -72,13 +88,12 @@
 	box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
 }
 
-
 .image-capture .captured {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1.5rem;
+	/* gap: 1.5rem; */
 	position: relative;
 }
 
@@ -91,6 +106,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1.5rem;
+	/* gap: 1.5rem; */
 	position: relative;
 }

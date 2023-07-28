@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { WebcamCapture } from '../../components';
 import './register.css';
+import axios from 'axios';
 
 const Register = () => {
   const [udata, setUdata] = useState({
     email: "",
     fullName: "",
     password: "",
+    role: "Student",
   });
 
   const handleChange = (e) => {
@@ -19,28 +22,13 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { email, fullName, password } = udata;
-
-    const res = await fetch('/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        fullName,
-        password
-      })
-    });
-
-    const data = await res.text();
-    console.log(data);
-
-    if (res.status === 422 || !data) {
-    } else {
-      setUdata({ email: '', fullName: '', password: '' });
+    try {
+      await axios.post('http://localhost:5000/register', udata);
+      console.log("Registration successful!");
+    } catch (err) {
+      console.log("Error during registration:", err);
     }
-  }
+  };
 
   return (
     <div className="user-register">
@@ -72,11 +60,22 @@ const Register = () => {
               placeholder="Password"
               id="password"
             />
+            <select
+              name="role"
+              onChange={handleChange}
+              value={udata.role}
+              id="role"
+            >
+              <option value="Student">Student</option>
+              <option value="Admin">Admin</option>
+            </select>
+            <div className="image-capture">
+              <WebcamCapture />
+            </div>
+          </div>
+          <div className="button">
             <button type="submit">Register</button>
           </div>
-          {/* <div className="image-capture">
-          <WebcamCapture />
-        </div> */}
         </form>
       </div>
     </div>
@@ -84,4 +83,3 @@ const Register = () => {
 };
 
 export default Register;
-
