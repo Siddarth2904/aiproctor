@@ -1,61 +1,40 @@
 import React, { useState } from "react";
-<<<<<<< HEAD:src/containers/Reegister/Register.jsx
+import axios from "axios"; // Make sure to import axios
 import { WebcamCapture } from '../../components';
-=======
-// import { CommonInput } from '../../components';
->>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
 import './register.css';
-import axios from 'axios';
 
 const Register = () => {
   const [udata, setUdata] = useState({
     email: "",
     fullName: "",
     password: "",
-    role: "Student",
+    role: "Student", // Initialize role
   });
+
   const adddata = (e) => {
     const { name, value } = e.target;
-    // console.log(e.target);
-    setUdata(() => {
-      return {
-        ...udata,
-        [name]: value,
-      };
-    });
+    setUdata((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUdata((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const senddata = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD:src/containers/Reegister/Register.jsx
 
     try {
       await axios.post('http://localhost:5000/register', udata);
       console.log("Registration successful!");
     } catch (err) {
       console.log("Error during registration:", err);
-=======
-    const { email, fullName, password } = udata
-
-    const res = await fetch('/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        fullName,
-        password
-      })
-    });
-
-
-    const data = await res.json()
-    // console.log(data);
-
-    if (res.status === 422 || !data) {
-    } else {
-      setUdata({ ...udata, email: '', fullName: '', password: '' })
->>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
     }
   };
 
@@ -89,7 +68,6 @@ const Register = () => {
               placeholder="Password"
               id="password"
             />
-<<<<<<< HEAD:src/containers/Reegister/Register.jsx
             <select
               name="role"
               onChange={handleChange}
@@ -104,10 +82,7 @@ const Register = () => {
             </div>
           </div>
           <div className="button">
-            <button type="submit">Register</button>
-=======
-            <button onClick={senddata}>Register</button>
->>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
+            <button type="submit" onClick={senddata}>Register</button>
           </div>
         </form>
       </div>

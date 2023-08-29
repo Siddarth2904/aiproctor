@@ -48,9 +48,9 @@ select {
 .button {
 	display: flex;
 	justify-content: center;
-  }
-  
-  button {
+}
+
+button {
 	background-color: #5880f0;
 	color: #ffffff;
 	font-family: 'Inter', sans-serif;
@@ -62,8 +62,8 @@ select {
 	border-radius: 0.9rem;
 	box-shadow: 10px 9px 40px 7px rgba(177, 202, 255, 0.21);
 	transition: background-color 0.3s ease;
-  }
-  
+}
+
 
 .image-capture {
 	display: flex;
