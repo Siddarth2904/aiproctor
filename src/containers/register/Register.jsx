@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-<<<<<<< HEAD:src/containers/register/Register.jsx
 <<<<<<< HEAD:src/containers/Reegister/Register.jsx
 import { WebcamCapture } from '../../components';
 =======
 // import { CommonInput } from '../../components';
 >>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
-=======
->>>>>>> parent of 7136cef (.):src/containers/Reegister/Register.jsx
 import './register.css';
+import axios from 'axios';
 
 const Register = () => {
   const [udata, setUdata] = useState({
     email: "",
     fullName: "",
     password: "",
+    role: "Student",
   });
   const adddata = (e) => {
     const { name, value } = e.target;
@@ -29,7 +28,6 @@ const Register = () => {
     e.preventDefault();
 <<<<<<< HEAD:src/containers/Reegister/Register.jsx
 
-<<<<<<< HEAD:src/containers/register/Register.jsx
     try {
       await axios.post('http://localhost:5000/register', udata);
       console.log("Registration successful!");
@@ -37,9 +35,6 @@ const Register = () => {
       console.log("Error during registration:", err);
 =======
     const { email, fullName, password } = udata
-=======
-    const { email, fullName, password } = udata;
->>>>>>> parent of 7136cef (.):src/containers/Reegister/Register.jsx
 
     const res = await fetch('/register', {
       method: 'POST',
@@ -53,7 +48,6 @@ const Register = () => {
       })
     });
 
-<<<<<<< HEAD:src/containers/register/Register.jsx
 
     const data = await res.json()
     // console.log(data);
@@ -62,16 +56,8 @@ const Register = () => {
     } else {
       setUdata({ ...udata, email: '', fullName: '', password: '' })
 >>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
-=======
-    const data = await res.text();
-    console.log(data);
-
-    if (res.status === 422 || !data) {
-    } else {
-      setUdata({ email: '', fullName: '', password: '' });
->>>>>>> parent of 7136cef (.):src/containers/Reegister/Register.jsx
     }
-  }
+  };
 
   return (
     <div className="user-register">
@@ -103,7 +89,6 @@ const Register = () => {
               placeholder="Password"
               id="password"
             />
-<<<<<<< HEAD:src/containers/register/Register.jsx
 <<<<<<< HEAD:src/containers/Reegister/Register.jsx
             <select
               name="role"
@@ -119,16 +104,11 @@ const Register = () => {
             </div>
           </div>
           <div className="button">
-=======
->>>>>>> parent of 7136cef (.):src/containers/Reegister/Register.jsx
             <button type="submit">Register</button>
 =======
             <button onClick={senddata}>Register</button>
 >>>>>>> parent of d4f620e (.):src/containers/register/Register.jsx
           </div>
-          {/* <div className="image-capture">
-          <WebcamCapture />
-        </div> */}
         </form>
       </div>
     </div>
@@ -136,4 +116,3 @@ const Register = () => {
 };
 
 export default Register;
-
