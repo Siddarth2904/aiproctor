@@ -18,7 +18,8 @@
 	display: flex;
 	gap: 2rem;
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 1rem;
+	margin-right: 4rem;
 }
 
 .landing-navbar .landing-navbar-links a {
@@ -29,11 +30,4 @@
 
 .landing-navbar .landing-navbar-links a:hover {
 	color: #5880f0;
-}
-
-.landing-navbar .MuiAvatar-root {
-	width: 40px;
-	height: 40px;
-	border: 2px solid #5880f0;
-	cursor: pointer;
 }

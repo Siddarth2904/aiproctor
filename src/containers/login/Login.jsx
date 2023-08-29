@@ -58,10 +58,6 @@ const Login = () => {
 							onChange={handlePasswordChange}
 						/>
 						<button onClick={handleSubmit}>Login</button>
-
-						<button><a href="/register">Create new Account</a></button>
-
-
 					</div>
 
 				</form>
